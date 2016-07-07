@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "575195603967",
+    "project_id": "bakatumu-1304"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:575195603967:android:9549345779d6aff2",
+        "android_client_info": {
+          "package_name": "com.bakatumu.bakatumu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "575195603967-filvhgqv3ruv5cto909kd0ctecgdn7q6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0fx1q4eCt94Sq9oQHqbrdXXEwuALLfHA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
