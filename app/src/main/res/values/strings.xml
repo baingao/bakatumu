@@ -14,6 +14,7 @@
     <string name="action_chat_room">Rooms</string>
     <string name="action_logout">Logout</string>
     <string name="hotlist">Hotlist</string>
+    <string name="action_aer">beliAer</string>
     <string name="action_home">Beranda</string>
     <string name="action_message">Pesan</string>
     <string name="action_refresh">Reload</string>

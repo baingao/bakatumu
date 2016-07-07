@@ -14,6 +14,7 @@ import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 
 import com.bakatumu.bakatumu.R;
+import com.bakatumu.bakatumu.app.MyApplication;
 
 public class AerActivity extends AppCompatActivity {
 
@@ -82,37 +83,30 @@ public class AerActivity extends AppCompatActivity {
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
-
-        getMenuInflater().inflate(R.menu.menu_aer, menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-
-            case R.id.action_home:
-                mWebView.loadUrl(appUrl);
-                return true;
-
-            case R.id.action_message:
-                mWebView.loadUrl(appUrl+"pesan.php");
-                return true;
-
-            case R.id.action_refresh:
-                mWebView.reload();
-                return true;
-
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
+        switch (menuItem.getItemId()) {
             case R.id.action_logout:
-                mWebView.loadUrl(appUrl+"logout.php");
-                return true;
+                MyApplication.getInstance().logout();
+                break;
 
-            default:
-                // If we got here, the user's action was not recognized.
-                // Invoke the superclass to handle it.
-                return super.onOptionsItemSelected(item);
+            case R.id.action_user:
+                MyApplication.getInstance().userActivity();
+                break;
 
+            case R.id.action_chat_room:
+                MyApplication.getInstance().mainActivity();
+                break;
+
+            case R.id.action_aer:
+                MyApplication.getInstance().aerActivity();
+                break;
         }
+        return super.onOptionsItemSelected(menuItem);
     }
 
     /*

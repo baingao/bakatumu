@@ -324,31 +324,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    /* start of new menu
-    static Button notifCount; //android.widget.button
-    static int mNotifCount = 0;
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_main, menu);
-
-        MenuItem item = menu.findItem(R.id.action_user);
-        MenuItemCompat.setActionView(item, R.layout.feed_update_count);
-        View count = menu.findItem(R.id.action_user).getActionView();
-        notifCount = (Button) MenuItemCompat.getActionView(item);
-        notifCount = (Button) count.findViewById(R.id.notif_count);
-        notifCount.setText(String.valueOf(mNotifCount));
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    private void setNotifCount(int count){
-        mNotifCount = count;
-        invalidateOptionsMenu();
-    }
-    */ // end of new menu
-
-
     public boolean onOptionsItemSelected(MenuItem menuItem) {
         switch (menuItem.getItemId()) {
             case R.id.action_logout:
@@ -358,13 +333,18 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_user:
                 MyApplication.getInstance().userActivity();
                 break;
-
+/*
             case R.id.action_chat:
-                MyApplication.getInstance().aerActivity();
+                MyApplication.getInstance().chatActivity();
                 break;
+*/
 
             case R.id.action_chat_room:
                 MyApplication.getInstance().mainActivity();
+                break;
+
+            case R.id.action_aer:
+                MyApplication.getInstance().aerActivity();
                 break;
         }
         return super.onOptionsItemSelected(menuItem);
