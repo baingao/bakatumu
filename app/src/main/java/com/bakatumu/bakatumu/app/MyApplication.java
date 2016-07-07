@@ -13,6 +13,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 
+import com.bakatumu.bakatumu.activity.AerActivity;
 import com.bakatumu.bakatumu.activity.LoginActivity;
 import com.bakatumu.bakatumu.activity.MainActivity;
 import com.bakatumu.bakatumu.activity.UserActivity;
@@ -84,11 +85,16 @@ public class MyApplication extends Application {
 
     public void userActivity() {
         //pref.clear();
-
         Intent intent = new Intent(this, UserActivity.class);
-
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
 
+    }
+
+    public void aerActivity() {
+        //pref.clear();
+        Intent intent = new Intent(this, AerActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
 
     }

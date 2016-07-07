@@ -359,6 +359,10 @@ public class MainActivity extends AppCompatActivity {
                 MyApplication.getInstance().userActivity();
                 break;
 
+            case R.id.action_chat:
+                MyApplication.getInstance().aerActivity();
+                break;
+
             case R.id.action_chat_room:
                 MyApplication.getInstance().mainActivity();
                 break;
