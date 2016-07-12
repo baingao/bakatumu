@@ -1,8 +1,11 @@
 package com.bakatumu.bakatumu.activity;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,6 +26,10 @@ public class AerActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        if (MyApplication.getInstance().getPrefManager().getUser() == null) {
+            launchLoginActivity();
+        }
 
         super.onCreate(savedInstanceState);
 
@@ -107,6 +114,13 @@ public class AerActivity extends AppCompatActivity {
                 break;
         }
         return super.onOptionsItemSelected(menuItem);
+    }
+
+    private void launchLoginActivity() {
+        Intent intent = new Intent(AerActivity.this, LoginActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
     }
 
     /*

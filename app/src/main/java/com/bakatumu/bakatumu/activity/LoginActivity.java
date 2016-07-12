@@ -46,7 +46,7 @@ public class LoginActivity extends AppCompatActivity {
         /**
          * Check for login session. It user is already logged in
          * redirect him to main activity
-         * */
+         **/
         if (MyApplication.getInstance().getPrefManager().getUser() != null) {
             startActivity(new Intent(this, MainActivity.class));
             finish();
@@ -60,7 +60,7 @@ public class LoginActivity extends AppCompatActivity {
         inputLayoutEmail = (TextInputLayout) findViewById(R.id.input_layout_email);
         inputName = (EditText) findViewById(R.id.input_name);
         inputEmail = (EditText) findViewById(R.id.input_email);
-        btnEnter = (Button) findViewById(R.id.btn_enter);
+        btnEnter = (Button) findViewById(R.id.btn_login);
 
         inputName.addTextChangedListener(new MyTextWatcher(inputName));
         inputEmail.addTextChangedListener(new MyTextWatcher(inputEmail));
@@ -106,7 +106,7 @@ public class LoginActivity extends AppCompatActivity {
                         JSONObject userObj = obj.getJSONObject("user");
                         User user = new User(userObj.getString("user_id"),
                                 userObj.getString("name"),
-                                userObj.getString("email"), null, null, 0);
+                                userObj.getString("email"), null, null, null, null, 0);
 
                         // storing user in shared preferences
                         MyApplication.getInstance().getPrefManager().storeUser(user);

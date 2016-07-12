@@ -6,16 +6,18 @@ import java.io.Serializable;
  * Created by Lincoln on 07/01/16.
  */
 public class User implements Serializable {
-    String id, name, email, lastMessage, timestamp;
+    String id, name, email, phone, apiKey, lastMessage, timestamp;
     int unreadCount;
 
     public User() {
     }
 
-    public User(String id, String name, String email, String lastMessage, String timestamp, int unreadCount) {
+    public User(String id, String name, String email, String phone, String apiKey, String lastMessage, String timestamp, int unreadCount) {
         this.id = id;
         this.name = name;
         this.email = email;
+        this.phone = phone;
+        this.apiKey = apiKey;
         this.lastMessage = lastMessage;
         this.timestamp = timestamp;
         this.unreadCount = unreadCount;
@@ -45,13 +47,23 @@ public class User implements Serializable {
         this.email = email;
     }
 
-    public String getLastMessage() {
-        return lastMessage;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setLastMessage(String lastMessage) {
-        this.lastMessage = lastMessage;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
+
+    public String getApiKey() { return apiKey; }
+
+    public void setApiKey(String apiKey) {
+        this.apiKey = apiKey;
+    }
+
+    public String getLastMessage() { return lastMessage; }
+
+    public void setLastMessage(String lastMessage) { this.lastMessage = lastMessage; }
 
     public String getTimestamp() {
         return timestamp;

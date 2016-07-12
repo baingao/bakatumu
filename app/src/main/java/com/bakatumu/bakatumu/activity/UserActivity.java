@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.NetworkResponse;
@@ -161,8 +162,6 @@ public class UserActivity extends AppCompatActivity {
             Message message = (Message) intent.getSerializableExtra("message");
             Toast.makeText(getApplicationContext(), message.getUser().getName() + ": " + message.getMessage(), Toast.LENGTH_LONG).show();
         }
-
-
     }
 
     /**
@@ -208,6 +207,9 @@ public class UserActivity extends AppCompatActivity {
                             user.setId(chatRoomsObj.getString("user_id")); // user_id -> id
                             user.setName(chatRoomsObj.getString("name"));
                             user.setEmail(chatRoomsObj.getString("email"));
+
+//                            user.setPhone(chatRoomsObj.getString("phone"));
+//                            user.setApiKey(chatRoomsObj.getString("api_key"));
 
                             //resolve to get new message effect
                             /*
@@ -354,6 +356,10 @@ public class UserActivity extends AppCompatActivity {
 
             case R.id.action_chat_room:
                 MyApplication.getInstance().mainActivity();
+                break;
+
+            case R.id.action_aer:
+                MyApplication.getInstance().aerActivity();
                 break;
             // end of tambahan menu
         }

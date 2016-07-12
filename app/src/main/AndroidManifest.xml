@@ -40,17 +40,19 @@
         <activity
             android:name=".activity.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".activity.LoginActivity"
-            android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".activity.LoginBaruActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
         <activity
             android:name=".activity.ChatRoomActivity"
             android:label="@string/title_activity_chat_room_discussion"
@@ -73,6 +75,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activity.UserActivity" />
         </activity>
+
+
 
         <!-- START Added for GCM -->
         <receiver
@@ -102,7 +106,6 @@
         </service>
 
         <!-- END Added for GCM -->
-        <activity android:name=".activity.AerActivity"></activity>
     </application>
 
 </manifest>

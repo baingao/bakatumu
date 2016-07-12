@@ -89,6 +89,7 @@ public class GcmIntentService extends IntentService {
         LocalBroadcastManager.getInstance(this).sendBroadcast(registrationComplete);
     }
 
+        // setelah dapat gcm_registration _id, kirim ke server untuk update tabel user
     private void sendRegistrationToServer(final String token) {
 
         // checking for valid login session

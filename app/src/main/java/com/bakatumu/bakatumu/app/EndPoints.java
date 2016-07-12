@@ -8,7 +8,7 @@ public class EndPoints {
     // localhost url
     // public static final String BASE_URL = "http://192.168.0.101/gcm_chat/v1";
 
-    public static final String BASE_URL = "http://103.240.110.254/gcm_chat/v1";
+    public static final String BASE_URL = "http://bakatumu.com/aer/v1";
     public static final String LOGIN = BASE_URL + "/user/login";
     public static final String USER = BASE_URL + "/user/_ID_";
     public static final String USERS = BASE_URL + "/allusers";
@@ -18,4 +18,10 @@ public class EndPoints {
     public static final String PM_THREAD = BASE_URL + "/pm/_ID_";
     public static final String PRIVATE_MESSAGE = BASE_URL + "/pm/_ID_/message";
     public static final String USER_MESSAGE = BASE_URL + "/user/_ID_/message";
+
+    // tambahan baru
+    public static final String BASE_USER_URL = "http://bakatumu.com/aer/v1_user";
+    public static final String USER_LOGIN = BASE_USER_URL + "/login";
+    public static final String USER_BY_NAME = BASE_USER_URL + "/baru/getuser/name/_NAME_";
+    public static final String USER_BY_PHONE = BASE_USER_URL + "/baru/getuser/phone/_PHONE_";
 }

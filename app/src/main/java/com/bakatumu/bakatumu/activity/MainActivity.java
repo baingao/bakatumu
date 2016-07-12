@@ -61,11 +61,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        /**
-         * Check for login session. If not logged in launch
-         * login activity
-         * */
+        // Cek login, kalo belum login, arahkan ke LoginActivity
         if (MyApplication.getInstance().getPrefManager().getUser() == null) {
+            //Toast.makeText(MainActivity.this, MyApplication.getInstance().getPrefManager().getUser().getName(), Toast.LENGTH_SHORT).show();
             launchLoginActivity();
         }
 
@@ -262,10 +260,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void launchLoginActivity() {
-        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        Intent intent = new Intent(MainActivity.this, LoginBaruActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         finish();
+
+//        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+//        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//        startActivity(intent);
+//        finish();
     }
 
     @Override
@@ -315,14 +318,12 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
-
 
     public boolean onOptionsItemSelected(MenuItem menuItem) {
         switch (menuItem.getItemId()) {
@@ -333,11 +334,6 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_user:
                 MyApplication.getInstance().userActivity();
                 break;
-/*
-            case R.id.action_chat:
-                MyApplication.getInstance().chatActivity();
-                break;
-*/
 
             case R.id.action_chat_room:
                 MyApplication.getInstance().mainActivity();
@@ -346,6 +342,12 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_aer:
                 MyApplication.getInstance().aerActivity();
                 break;
+
+            /* untuk personal chat
+            case R.id.action_chat:
+                MyApplication.getInstance().chatActivity();
+                break;
+            */
         }
         return super.onOptionsItemSelected(menuItem);
     }

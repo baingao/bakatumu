@@ -15,6 +15,7 @@ import com.android.volley.toolbox.Volley;
 
 import com.bakatumu.bakatumu.activity.AerActivity;
 import com.bakatumu.bakatumu.activity.LoginActivity;
+import com.bakatumu.bakatumu.activity.LoginBaruActivity;
 import com.bakatumu.bakatumu.activity.MainActivity;
 import com.bakatumu.bakatumu.activity.UserActivity;
 import com.bakatumu.bakatumu.helper.MyPreferenceManager;
@@ -78,7 +79,7 @@ public class MyApplication extends Application {
 
     public void logout() {
         pref.clear();
-        Intent intent = new Intent(this, LoginActivity.class);
+        Intent intent = new Intent(this, LoginBaruActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }

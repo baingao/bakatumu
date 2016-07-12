@@ -32,6 +32,8 @@ public class MyPreferenceManager {
     private static final String KEY_USER_ID = "user_id";
     private static final String KEY_USER_NAME = "user_name";
     private static final String KEY_USER_EMAIL = "user_email";
+    private static final String KEY_USER_PHONE = "user_phone";
+    private static final String KEY_USER_APIKEY = "user_apiKey";
     private static final String KEY_NOTIFICATIONS = "notifications";
 
     // Constructor
@@ -46,24 +48,28 @@ public class MyPreferenceManager {
         editor.putString(KEY_USER_ID, user.getId());
         editor.putString(KEY_USER_NAME, user.getName());
         editor.putString(KEY_USER_EMAIL, user.getEmail());
+        editor.putString(KEY_USER_PHONE, user.getPhone());
+        editor.putString(KEY_USER_APIKEY, user.getApiKey());
         editor.commit();
 
-        Log.e(TAG, "User is stored in shared preferences. " + user.getName() + ", " + user.getEmail());
+        Log.e(TAG, "User is stored in shared preferences. " + user.getName() + ", " + user.getPhone());
     }
 
     public User getUser() {
         if (pref.getString(KEY_USER_ID, null) != null) {
-            String id, name, email, lastMessage, timestamp;
+            String id, name, email, phone, apiKey, lastMessage, timestamp;
             int unreadCount;
 
             id = pref.getString(KEY_USER_ID, null);
             name = pref.getString(KEY_USER_NAME, null);
             email = pref.getString(KEY_USER_EMAIL, null);
+            phone = pref.getString(KEY_USER_PHONE, null);
+            apiKey = pref.getString(KEY_USER_APIKEY, null);
             lastMessage = null;
             timestamp = null;
             unreadCount = 0;
 
-            User user = new User(id, name, email, null, null, 0);
+            User user = new User(id, name, email, phone, apiKey, lastMessage, timestamp, unreadCount);
             return user;
         }
         return null;
