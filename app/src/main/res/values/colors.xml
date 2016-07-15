@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#1A8CDD</color>
-    <color name="colorPrimaryDark">#0059B3</color>
-    <color name="colorAccent">#66B3FF</color>
-    <color name="list_divider">#dedede</color>
+    <color name="colorPrimary">#2196F3</color>
+    <color name="colorPrimaryDark">#1976D2</color>
+    <color name="colorPrimaryLight">#bbdefb</color>
+    <color name="colorPrimaryText">#212121</color>
+    <color name="colorSecondaryText">#727272</color>
+    <color name="colorText">#FFFFFF</color>
+    <color name="colorAccent">#ffc107</color>
+    <color name="list_divider">#B6B6B6</color>
     <color name="bg_bubble_self">#E1E1E1</color>
+    <color name="colorOk">#34af00</color>
 </resources>

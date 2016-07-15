@@ -14,6 +14,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 
 import com.bakatumu.bakatumu.activity.AerActivity;
+import com.bakatumu.bakatumu.activity.DaftarActivity;
 import com.bakatumu.bakatumu.activity.LoginActivity;
 import com.bakatumu.bakatumu.activity.LoginBaruActivity;
 import com.bakatumu.bakatumu.activity.MainActivity;
@@ -57,7 +58,6 @@ public class MyApplication extends Application {
         if (pref == null) {
             pref = new MyPreferenceManager(this);
         }
-
         return pref;
     }
 
@@ -85,23 +85,24 @@ public class MyApplication extends Application {
     }
 
     public void userActivity() {
-        //pref.clear();
         Intent intent = new Intent(this, UserActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
+    }
 
+    public void daftarActivity() {
+        Intent intent = new Intent(this, DaftarActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
     }
 
     public void aerActivity() {
-        //pref.clear();
         Intent intent = new Intent(this, AerActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
-
     }
 
     public void mainActivity() {
-        //pref.clear();
         Intent intent = new Intent(this, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);

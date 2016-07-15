@@ -276,7 +276,7 @@ public class UserActivity extends AppCompatActivity {
     }
 
     private void launchLoginActivity() {
-        Intent intent = new Intent(UserActivity.this, LoginActivity.class);
+        Intent intent = new Intent(UserActivity.this, LoginBaruActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         finish();

@@ -1,97 +1,169 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:fillViewport="true"
+    android:paddingBottom="@dimen/activity_vertical_full"
+    android:paddingLeft="@dimen/activity_horizontal_full"
+    android:paddingRight="@dimen/activity_horizontal_full"
+    android:paddingTop="@dimen/activity_vertical_full"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".activity.LoginBaruActivity"
     tools:showIn="@layout/activity_login_baru">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageView"
-            android:layout_gravity="center_horizontal"
-            android:contentDescription="image"
-            android:src="@mipmap/ic_logo"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Selamat datang!\n Silahkan login untuk memesan air tangki,\nsetiap hari Senin - Sabtu\n mulai jam 09.00 s/d 18.00 WITA."
-            android:textAlignment="center"
-            android:id="@+id/textView2"
-            android:layout_gravity="center_horizontal" />
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/input_layout_nohp"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="200sp"
+            android:background="@drawable/bg_radial_gradient">
 
-            <EditText
-                android:id="@+id/input_phone"
+            <TextView
+                android:id="@+id/welcome_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20sp"
+                android:layout_marginTop="50sp"
+                android:text="beliAer"
+                android:textAlignment="center"
+                android:textColor="#ffffff"
+                android:textSize="28sp" />
+
+            <TextView
+                android:id="@+id/welcome_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/welcome_message"
+                android:layout_centerHorizontal="true"
+                android:text="Silahkan login untuk memesan air tangki,\nsetiap hari Senin - Sabtu\n mulai jam 09.00 s/d 18.00 WITA."
+                android:textAlignment="center"
+                android:textColor="#ffffff"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:contentDescription="image"
+                android:src="@drawable/aer_logo_128" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_nohp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/input_nohp" />
+                android:layout_marginBottom="24dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginTop="24dp">
 
-        </android.support.design.widget.TextInputLayout>
+                <EditText
+                    android:id="@+id/input_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/input_nohp" />
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/input_layout_password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            </android.support.design.widget.TextInputLayout>
 
-            <EditText
-                android:id="@+id/input_password"
-                android:inputType="textPassword"
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/input_password" />
+                android:layout_marginBottom="24dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp">
 
-        </android.support.design.widget.TextInputLayout>
+                <EditText
+                    android:id="@+id/input_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/input_password"
+                    android:inputType="textPassword" />
 
-        <Button
-            android:id="@+id/btn_login"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Login" />
+            </android.support.design.widget.TextInputLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Belum punya akun?\nklik tombol di bawah ini untuk mendaftar."
-            android:textAlignment="center"
-            android:id="@+id/textView1"
-            android:layout_gravity="center_horizontal" />
+            <RelativeLayout
+                android:id="@+id/ButtonLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_centerHorizontal="true"
+                android:baselineAligned="false">
 
-        <Button
-            android:id="@+id/btn_daftar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Daftar" />
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/btn_daftar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_margin="@dimen/fab_margin"
+                    android:src="@drawable/ic_person_add"
+                    app:backgroundTint="@android:color/holo_red_light" />
+
+                <TextView
+                    android:id="@+id/dafar_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_below="@id/btn_daftar"
+                    android:layout_marginLeft="24dp"
+                    android:text="Daftar"
+                    android:textColor="@android:color/holo_red_light"
+                    android:textAlignment="center" />
+
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/btn_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="end"
+                    android:layout_margin="@dimen/fab_margin"
+                    android:src="@drawable/ic_check"
+                    app:backgroundTint="#34af00" />
+
+                <TextView
+                    android:id="@+id/login_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="end"
+                    android:layout_below="@id/btn_login"
+                    android:layout_marginEnd="27dp"
+                    android:text="Login"
+                    android:textColor="#34af00"
+                    android:textAlignment="center" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:indeterminateTint="@color/colorAccent"
+            android:indeterminateTintMode="src_atop"
+            android:visibility="gone" />
 
     </LinearLayout>
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center"
-        android:layout_marginBottom="10dp"
-        android:indeterminateTint="@color/colorAccent"
-        android:indeterminateTintMode="src_atop"
-        android:visibility="gone" />
-
-</RelativeLayout>
+</ScrollView>

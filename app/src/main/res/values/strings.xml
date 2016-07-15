@@ -6,7 +6,7 @@
     <string name="hint_name">Full Name</string>
     <string name="hint_email">Email</string>
     <string name="err_msg_name">Enter full name</string>
-    <string name="err_msg_email">Enter valid email address</string>
+    <string name="err_msg_email">Email tidak valid</string>
     <string name="err_msg_phone">Nomor HP tidak valid</string>
     <string name="title_activity_chat_room_discussion">ChatRoomDiscussionActivity</string>
     <string name="title_activity_pm">Private Messaging</string>
@@ -21,4 +21,7 @@
     <string name="action_refresh">Reload</string>
     <string name="input_nohp">Nomor HP</string>
     <string name="input_password">Password</string>
+    <string name="input_nama_lengkap">Nama Lengkap</string>
+    <string name="input_email">Email</string>
+    <string name="input_alamat">Alamat</string>
 </resources>

@@ -1,6 +1,8 @@
 package com.bakatumu.bakatumu.activity;
 
 import android.content.Intent;
+import android.graphics.Typeface;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,6 +13,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.NetworkResponse;
@@ -32,9 +35,10 @@ import java.util.Map;
 public class LoginBaruActivity extends AppCompatActivity {
 
     private String TAG = LoginBaruActivity.class.getSimpleName();
+    private TextView welcomeMessage, welcomeHint, loginHint, daftarHint;
     private EditText inputPhone, inputPassword;
     private TextInputLayout inputLayoutPhone, inputLayoutPassword;
-    private Button btnLogin, btnDaftar;
+    private FloatingActionButton btnLogin, btnDaftar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,20 +46,46 @@ public class LoginBaruActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_login_baru);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        Typeface ubuntuRegular = Typeface.createFromAsset(getAssets(),
+                "Ubuntu-Regular.ttf");
 
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
+
+        welcomeMessage = (TextView) findViewById(R.id.welcome_message);
+        welcomeHint = (TextView) findViewById(R.id.welcome_hint);
+        loginHint = (TextView) findViewById(R.id.login_hint);
+        daftarHint = (TextView) findViewById(R.id.dafar_hint);
         inputLayoutPhone = (TextInputLayout) findViewById(R.id.input_layout_nohp);
         inputLayoutPassword = (TextInputLayout) findViewById(R.id.input_layout_password);
         inputPhone = (EditText) findViewById(R.id.input_phone);
         inputPassword = (EditText) findViewById(R.id.input_password);
-        btnLogin = (Button) findViewById(R.id.btn_login);
-        btnDaftar = (Button) findViewById(R.id.btn_daftar);
+        btnLogin = (FloatingActionButton) findViewById(R.id.btn_login);
+        btnDaftar = (FloatingActionButton) findViewById(R.id.btn_daftar);
+
+
+        welcomeMessage.setTypeface(ubuntuRegular);
+        welcomeHint.setTypeface(ubuntuRegular);
+        loginHint.setTypeface(ubuntuRegular);
+        daftarHint.setTypeface(ubuntuRegular);
+        inputLayoutPhone.setTypeface(ubuntuRegular);
+        inputPhone.setTypeface(ubuntuRegular);
+        inputLayoutPassword.setTypeface(ubuntuRegular);
+        inputPassword.setTypeface(ubuntuRegular);
+//        btnLogin.setTypeface(ubuntuRegular);
+//        btnDaftar.setTypeface(ubuntuRegular);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 login();
+            }
+        });
+
+        btnDaftar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MyApplication.getInstance().daftarActivity();
             }
         });
     }
@@ -141,7 +171,7 @@ public class LoginBaruActivity extends AppCompatActivity {
                         MyApplication.getInstance().getPrefManager().storeUser(user);
 
                         // start main activity
-                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        startActivity(new Intent(getApplicationContext(), MenuActivity.class));
                         finish();
 
                     } else {
@@ -153,7 +183,6 @@ public class LoginBaruActivity extends AppCompatActivity {
                     Log.e(TAG, "json parsing error: " + e.getMessage());
                     Toast.makeText(getApplicationContext(), "Json parse error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
-
 
             }
         }, new Response.ErrorListener() {

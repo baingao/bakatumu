@@ -64,7 +64,7 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.ViewHolder> 
         //holder.email.setText(user.getEmail());
 
         /* add message to user to display last message dealt with this user */
-        // holder.lastMessage.setText(user.getLastMessage());
+        holder.lastMessage.setText(user.getLastMessage());
         if (user.getUnreadCount() > 0) {
             holder.unreadCount.setText(String.valueOf(user.getUnreadCount()));
             holder.unreadCount.setVisibility(View.VISIBLE);
