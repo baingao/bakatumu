@@ -6,15 +6,19 @@ import java.io.Serializable;
  * Created by Lincoln on 07/01/16.
  */
 public class User implements Serializable {
-    String id, name, email, phone, apiKey, lastMessage, timestamp;
+    String id, name, alamat, lat, lng, email, phone, apiKey, lastMessage, timestamp;
     int unreadCount;
 
     public User() {
     }
 
-    public User(String id, String name, String email, String phone, String apiKey, String lastMessage, String timestamp, int unreadCount) {
+    public User(String id, String name, String alamat, String lat, String lng, String email, String phone,
+                String apiKey, String lastMessage, String timestamp, int unreadCount) {
         this.id = id;
         this.name = name;
+        this.alamat = alamat;
+        this.lat = lat;
+        this.lng = lng;
         this.email = email;
         this.phone = phone;
         this.apiKey = apiKey;
@@ -39,9 +43,21 @@ public class User implements Serializable {
         this.name = name;
     }
 
+    public String getAlamat() {return alamat; }
+
+    public void  setAlamat(String alamat) {this.alamat = alamat; }
+
     public String getEmail() {
         return email;
     }
+
+    public String getLat() { return lat; }
+
+    public void setLat(String lat) { this.lat = lat; }
+
+    public String getLng() { return lng; }
+
+    public void getLng(String lng) { this.lng = lng; }
 
     public void setEmail(String email) {
         this.email = email;

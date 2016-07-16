@@ -336,7 +336,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.action_chat_room:
-                MyApplication.getInstance().mainActivity();
+                MyApplication.getInstance().menuActivity();
                 break;
 
             case R.id.action_aer:

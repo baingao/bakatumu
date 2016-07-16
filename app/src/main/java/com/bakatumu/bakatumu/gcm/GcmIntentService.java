@@ -133,8 +133,8 @@ public class GcmIntentService extends IntentService {
             @Override
             public void onErrorResponse(VolleyError error) {
                 NetworkResponse networkResponse = error.networkResponse;
-                Log.e(TAG, "Volley error: " + error.getMessage() + ", code: " + networkResponse);
-                Toast.makeText(getApplicationContext(), "Volley error: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+                Log.e(TAG, "GcmIntentService.java Volley error: " + error.getMessage() + ", code: " + networkResponse);
+                Toast.makeText(getApplicationContext(), "GcmIntentService.java Volley error: " + error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         }) {
 

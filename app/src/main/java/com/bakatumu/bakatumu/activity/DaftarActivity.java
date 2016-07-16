@@ -222,6 +222,9 @@ public class DaftarActivity extends AppCompatActivity {
                         JSONObject userObj = obj.getJSONObject("user");
                         User user = new User(userObj.getString("user_id"),
                                 userObj.getString("name"),
+                                userObj.getString("alamat"),
+                                userObj.getString("lat"),
+                                userObj.getString("lng"),
                                 userObj.getString("email"),
                                 userObj.getString("phone"),
                                 userObj.getString("api_key"),

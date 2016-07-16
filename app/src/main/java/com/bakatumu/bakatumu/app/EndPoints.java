@@ -18,11 +18,12 @@ public class EndPoints {
     public static final String PM_THREAD = BASE_URL + "/pm/_ID_";
     public static final String PRIVATE_MESSAGE = BASE_URL + "/pm/_ID_/message";
     public static final String USER_MESSAGE = BASE_URL + "/user/_ID_/message";
+    public static final String USER_ORDER = BASE_URL + "/order/simpan";
 
     // tambahan baru
     public static final String BASE_USER_URL = "http://bakatumu.com/aer/v1_user";
     public static final String USER_LOGIN = BASE_USER_URL + "/login";
     public static final String USER_DAFTAR = BASE_USER_URL + "/register";
-    public static final String USER_BY_NAME = BASE_USER_URL + "/baru/getuser/name/_NAME_";
-    public static final String USER_BY_PHONE = BASE_USER_URL + "/baru/getuser/phone/_PHONE_";
+//    public static final String USER_BY_NAME = BASE_USER_URL + "/baru/getuser/name/_NAME_";
+//    public static final String USER_BY_PHONE = BASE_USER_URL + "/baru/getuser/phone/_PHONE_";
 }

@@ -31,6 +31,9 @@ public class MyPreferenceManager {
     // All Shared Preferences Keys
     private static final String KEY_USER_ID = "user_id";
     private static final String KEY_USER_NAME = "user_name";
+    private static final String KEY_USER_ALAMAT = "user_alamat";
+    private static final String KEY_USER_LAT = "user_lat";
+    private static final String KEY_USER_LNG = "user_lng";
     private static final String KEY_USER_EMAIL = "user_email";
     private static final String KEY_USER_PHONE = "user_phone";
     private static final String KEY_USER_APIKEY = "user_apiKey";
@@ -47,6 +50,9 @@ public class MyPreferenceManager {
     public void storeUser(User user) {
         editor.putString(KEY_USER_ID, user.getId());
         editor.putString(KEY_USER_NAME, user.getName());
+        editor.putString(KEY_USER_ALAMAT, user.getAlamat());
+        editor.putString(KEY_USER_LAT, user.getLat());
+        editor.putString(KEY_USER_LNG, user.getLng());
         editor.putString(KEY_USER_EMAIL, user.getEmail());
         editor.putString(KEY_USER_PHONE, user.getPhone());
         editor.putString(KEY_USER_APIKEY, user.getApiKey());
@@ -57,11 +63,14 @@ public class MyPreferenceManager {
 
     public User getUser() {
         if (pref.getString(KEY_USER_ID, null) != null) {
-            String id, name, email, phone, apiKey, lastMessage, timestamp;
+            String id, name, alamat, lat, lng, email, phone, apiKey, lastMessage, timestamp;
             int unreadCount;
 
             id = pref.getString(KEY_USER_ID, null);
             name = pref.getString(KEY_USER_NAME, null);
+            alamat = pref.getString(KEY_USER_ALAMAT, null);
+            lat = pref.getString(KEY_USER_LAT, null);
+            lng = pref.getString(KEY_USER_LNG, null);
             email = pref.getString(KEY_USER_EMAIL, null);
             phone = pref.getString(KEY_USER_PHONE, null);
             apiKey = pref.getString(KEY_USER_APIKEY, null);
@@ -69,7 +78,7 @@ public class MyPreferenceManager {
             timestamp = null;
             unreadCount = 0;
 
-            User user = new User(id, name, email, phone, apiKey, lastMessage, timestamp, unreadCount);
+            User user = new User(id, name, alamat, lat, lng, email, phone, apiKey, lastMessage, timestamp, unreadCount);
             return user;
         }
         return null;

@@ -99,7 +99,7 @@ public class MenuActivity extends AppCompatActivity {
         btnOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MenuActivity.this, "Order Baru", Toast.LENGTH_SHORT).show();
+                MyApplication.getInstance().orderActivity();
             }
         });
 
