@@ -56,12 +56,9 @@ public class MenuActivity extends AppCompatActivity {
     private static final int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
     private BroadcastReceiver mRegistrationBroadcastReceiver;
     private ArrayList<ChatRoom> chatRoomArrayList;
-    private ChatRoomsAdapter mAdapter;
-    private RecyclerView recyclerView;
     private TextView btnOrder, btnHistory, btnPesan, btnProfil;
     private TextView welcomeMessage, welcomeHint;
     private FloatingActionButton btnLogout;
-//    private Button btnOrder, btnHistory, btnPesan, btnProfil, btnLogout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +66,6 @@ public class MenuActivity extends AppCompatActivity {
 
         // Cek login, kalo belum login, arahkan ke LoginActivity
         if (MyApplication.getInstance().getPrefManager().getUser() == null) {
-            //Toast.makeText(MainActivity.this, MyApplication.getInstance().getPrefManager().getUser().getName(), Toast.LENGTH_SHORT).show();
             launchLoginActivity();
         }
 
@@ -77,9 +73,6 @@ public class MenuActivity extends AppCompatActivity {
 
         Typeface ubuntuRegular = Typeface.createFromAsset(getAssets(),
                 "Ubuntu-Regular.ttf");
-
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
 
         welcomeMessage = (TextView) findViewById(R.id.welcome_message);
         welcomeHint = (TextView) findViewById(R.id.welcome_hint);
@@ -106,7 +99,7 @@ public class MenuActivity extends AppCompatActivity {
         btnHistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MenuActivity.this, "History Order", Toast.LENGTH_SHORT).show();
+                MyApplication.getInstance().orderHistoryActivity();
             }
         });
 
@@ -120,7 +113,7 @@ public class MenuActivity extends AppCompatActivity {
         btnProfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MenuActivity.this, "Lihat Profil", Toast.LENGTH_SHORT).show();
+                MyApplication.getInstance().profilActivity();
             }
         });
 
@@ -205,11 +198,6 @@ public class MenuActivity extends AppCompatActivity {
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         finish();
-
-//        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-//        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//        startActivity(intent);
-//        finish();
     }
 
     @Override
@@ -266,33 +254,6 @@ public class MenuActivity extends AppCompatActivity {
         return true;
     }
 
-    public boolean onOptionsItemSelected(MenuItem menuItem) {
-        switch (menuItem.getItemId()) {
-            case R.id.action_logout:
-                MyApplication.getInstance().logout();
-                break;
-
-            case R.id.action_user:
-                MyApplication.getInstance().userActivity();
-                break;
-
-            case R.id.action_chat_room:
-                MyApplication.getInstance().mainActivity();
-                break;
-
-            case R.id.action_aer:
-                MyApplication.getInstance().aerActivity();
-                break;
-
-            /* untuk personal chat
-            case R.id.action_chat:
-                MyApplication.getInstance().chatActivity();
-                break;
-            */
-        }
-        return super.onOptionsItemSelected(menuItem);
-    }
-
     public void newPMDialog(String user, String pesan) {
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
         alert.setTitle("Pesan baru");
@@ -318,6 +279,7 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     // FUNGSI LAMA
+
     private void requestFocus(View view) {
         if (view.requestFocus()) {
             getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);

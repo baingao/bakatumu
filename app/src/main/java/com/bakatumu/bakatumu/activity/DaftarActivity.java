@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -271,6 +272,9 @@ public class DaftarActivity extends AppCompatActivity {
                 return params;
             }
         };
+
+        strReq.setRetryPolicy(new DefaultRetryPolicy(
+                5000, 3, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
         //Adding request to request queue
         MyApplication.getInstance().addToRequestQueue(strReq);

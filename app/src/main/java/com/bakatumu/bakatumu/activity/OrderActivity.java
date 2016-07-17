@@ -20,6 +20,7 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -152,7 +153,6 @@ public class OrderActivity extends AppCompatActivity {
             public void onResponse(String response) {
                 Log.e(TAG, "response: " + response);
                 Toast.makeText(OrderActivity.this, "Order sudah terkirim.", Toast.LENGTH_SHORT).show();
-
                 startActivity(new Intent(getApplicationContext(), MenuActivity.class));
                 finish();
             }
@@ -162,8 +162,8 @@ public class OrderActivity extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
                 NetworkResponse networkResponse = error.networkResponse;
-                Log.e(TAG, "Volley error: " + error.getMessage() + ", code: " + networkResponse);
-                Toast.makeText(getApplicationContext(), "Volley error: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+                Log.e(TAG, "Network: " + error.getMessage() + ", code: " + networkResponse);
+                Toast.makeText(getApplicationContext(), "Network: gagal mengirimkan data order", Toast.LENGTH_SHORT).show();
             }
         }) {
 
@@ -183,6 +183,12 @@ public class OrderActivity extends AppCompatActivity {
                 return params;
             }
         };
+
+
+        strReq.setRetryPolicy(new DefaultRetryPolicy(
+                5000, 3, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+
+        Toast.makeText(OrderActivity.this, "Mengirim order...", Toast.LENGTH_SHORT).show();
 
         MyApplication.getInstance().addToRequestQueue(strReq);
 

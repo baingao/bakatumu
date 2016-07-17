@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp"
+    android:paddingStart="5dp"
+    android:paddingEnd="5dp">
+
+    <TextView
+        android:id="@+id/label_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ID Order :"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/value_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="1"
+        android:textStyle="bold"
+        android:layout_toRightOf="@id/label_id"/>
+
+    <TextView
+        android:id="@+id/label_jumlah"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="Ret :"
+        android:textStyle="bold"
+        android:layout_toRightOf="@id/value_id"/>
+
+    <TextView
+        android:id="@+id/value_jumlah"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="1"
+        android:textStyle="bold"
+        android:layout_toRightOf="@id/label_jumlah"/>
+
+    <TextView
+        android:id="@+id/label_harga"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="Harga : Rp."
+        android:textStyle="bold"
+        android:layout_toRightOf="@id/value_jumlah"/>
+
+    <TextView
+        android:id="@+id/value_harga"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="75000"
+        android:textStyle="bold"
+        android:layout_toRightOf="@id/label_harga"/>
+
+    <TextView
+        android:id="@+id/value_idAset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="1"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/bg_circle"
+        android:layout_toRightOf="@id/value_harga"/>
+
+    <TextView
+        android:id="@+id/label_pesan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Waktu pesan :"
+        android:layout_below="@+id/label_id"/>
+
+    <TextView
+        android:id="@+id/value_pesan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="2016-07-08 10:00:00"
+        android:layout_below="@+id/value_id"
+        android:layout_toRightOf="@id/label_pesan"/>
+
+    <TextView
+        android:id="@+id/label_antar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Waktu antar :"
+        android:layout_below="@+id/label_pesan"/>
+
+    <TextView
+        android:id="@+id/value_antar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="2016-07-08 10:30:00"
+        android:layout_below="@+id/value_pesan"
+        android:layout_toRightOf="@id/label_antar"/>
+
+    <TextView
+        android:id="@+id/label_terima"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Waktu terima :"
+        android:layout_below="@+id/label_antar"/>
+
+    <TextView
+        android:id="@+id/value_terima"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="2016-07-08 11:00:00"
+        android:layout_below="@+id/value_antar"
+        android:layout_toRightOf="@id/label_terima"/>
+
+    <TextView
+        android:id="@+id/label_alamat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alamat :"
+        android:layout_below="@+id/label_terima"/>
+
+    <TextView
+        android:id="@+id/value_alamat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="Jl. Sam Ratulangi Raya No.5"
+        android:layout_below="@+id/value_terima"
+        android:layout_toRightOf="@id/label_alamat"/>
+
+</RelativeLayout>
+

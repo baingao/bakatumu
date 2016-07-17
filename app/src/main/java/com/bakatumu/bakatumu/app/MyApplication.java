@@ -20,6 +20,8 @@ import com.bakatumu.bakatumu.activity.LoginBaruActivity;
 import com.bakatumu.bakatumu.activity.MainActivity;
 import com.bakatumu.bakatumu.activity.MenuActivity;
 import com.bakatumu.bakatumu.activity.OrderActivity;
+import com.bakatumu.bakatumu.activity.OrderHistoryActivity;
+import com.bakatumu.bakatumu.activity.ProfilActivity;
 import com.bakatumu.bakatumu.activity.UserActivity;
 import com.bakatumu.bakatumu.helper.MyPreferenceManager;
 
@@ -118,6 +120,18 @@ public class MyApplication extends Application {
 
     public void orderActivity() {
         Intent intent = new Intent(this, OrderActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+    }
+
+    public void orderHistoryActivity() {
+        Intent intent = new Intent(this, OrderHistoryActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+    }
+
+    public void profilActivity() {
+        Intent intent = new Intent(this, ProfilActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
